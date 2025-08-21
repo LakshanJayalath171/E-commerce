@@ -7,7 +7,7 @@ import dropdown_icon from "../Components/Assest/dropdown_icon.png"
 const ShopCategory = (props) => {
 
   const {all_products} = useContext(ShopContext)
-  console.log("All Products",all_products)
+  
   return (
     <div className="shop-category">
 
