@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../Context/ShopContext'
 import Breadcrum from '../Components/Breadcrum/Breadcrum';
-import { useParams } from 'react-router-dom';
+import {useParams}  from 'react-router-dom';
+import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
+import DescriptionBox from '../Components/DescriptionBox/DescriptionBox';
+import RelatedProducts from '../Components/RelatedProducts/RelatedProducts';
 
 const Product = () => {
 
@@ -14,15 +17,15 @@ const Product = () => {
   
   const { all_products } = s_context;
   const { id } = useParams(); // Destructure the 'id' parameter
-
-  // Find product and handle undefined cases
-  const product = all_products && Array.isArray(all_products)
-    ? all_products.find((e) => e.id === Number(id))
-    : null;
-
+  
+  const product = all_products.find((e)=>e.id==Number(id));
   return (
     <div className='product'>
       {product ? <Breadcrum product={product} /> : <div>Product not found</div>}
+
+      <ProductDisplay product={product}/>
+      <DescriptionBox/>
+      <RelatedProducts/>
     </div>
   );
 };

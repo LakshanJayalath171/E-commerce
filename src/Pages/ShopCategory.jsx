@@ -8,6 +8,7 @@ const ShopCategory = (props) => {
 
   const {all_products} = useContext(ShopContext)
   
+  
   return (
     <div className="shop-category">
 
@@ -25,10 +26,10 @@ const ShopCategory = (props) => {
       <div className="shop-category-products">
         {all_products.map((item, i) => {
           if(props.category === item.category){
-            return<Item key={i} name={item.name} image={item.image} price_new={item.new_price} price_old={item.old_price}/>
+            return<Item key={i} id={item.id} name={item.name} image={item.image} price_new={item.new_price} price_old={item.old_price}/>
           }
           else{
-            console.log("No mathching data")
+            console.log("here ...No mathching data on shop category.jsx")
           }
         })}
       </div>
