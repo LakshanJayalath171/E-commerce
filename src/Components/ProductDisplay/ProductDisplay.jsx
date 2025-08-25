@@ -3,6 +3,11 @@ import "./productdisplay.css"
 import star_icon from "../Assest/star_icon.png"
 import star_dhull_icon from "../Assest/star_dull_icon.png"
 import { ShopContext } from '../../Context/ShopContext'
+import { toast } from 'react-toastify'
+
+const notify = () =>{
+  toast("First Notification displayed..")
+}
 
 const ProductDisplay = (props) => {
 
@@ -54,7 +59,7 @@ const ProductDisplay = (props) => {
                 <div>XXL</div>
             </div>
 
-            <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
+            <button onClick={()=>{addToCart(product.id)}} >ADD TO CART</button>
             <p className='product-display-right-category'>Category<span>Women,T-shirt,crop Top</span></p>
             <p className='product-display-right-category'>Category<span>Modern, Latest</span></p>
 

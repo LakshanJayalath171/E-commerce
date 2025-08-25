@@ -10,6 +10,10 @@ import Footer from './Components/Footer/Footer'
 import men_banner from "./Components/Assest/banner_mens.png"
 import women_banner from "./Components/Assest/banner_women.png"
 import kids_banner from "./Components/Assest/banner_kids.png" 
+import { ToastContainer, toast } from 'react-toastify';
+
+
+
 
 const App = () => {
   return (
@@ -30,6 +34,8 @@ const App = () => {
       </Routes>
       <Footer/>
       </BrowserRouter>
+      <ToastContainer />
+      
     </div>
   )
 }

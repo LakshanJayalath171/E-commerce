@@ -1,8 +1,11 @@
 import React, { createContext, useState } from "react";
 import all_products from "../Components/Assest/all_product"
+import { toast } from "react-toastify";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ShopContext = createContext(null)
+
+
 
 const getDefaultcart = () =>{
     let cart = {};
@@ -12,7 +15,13 @@ const getDefaultcart = () =>{
     return cart
 }
 
+const addNoftify = ()=>{
+    toast("Item Added To Cart Successfully")
+}
 
+const removeNotify = ()=>{
+    toast("Item Remove From The Cart Successfully")
+}
 
 const ShopContextProvider = (props)=>{
     const [cartItems,setCartItems] = useState(getDefaultcart())
@@ -20,11 +29,12 @@ const ShopContextProvider = (props)=>{
 
     const addToCart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        console.log(cartItems)
+        addNoftify()
     }
 
     const removeFromCart = (itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+        removeNotify()
     }
 
     const totalCartItems = ()=>{
